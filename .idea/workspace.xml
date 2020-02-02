@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b68a047-5544-451e-9723-c1fa88a18067" name="Default Changelist" comment="" />
+    <list default="true" id="7b68a047-5544-451e-9723-c1fa88a18067" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/halls/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/halls/templates/registration/signup.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/fborganizer" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XFxWIIflgDMdvM4QkpaNY7bukN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
