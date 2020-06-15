@@ -4,7 +4,10 @@
     <list default="true" id="7b68a047-5544-451e-9723-c1fa88a18067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/halls/templates/halls/add_video.html" beforeDir="false" afterPath="$PROJECT_DIR$/halls/templates/halls/add_video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/halls/templates/halls/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/halls/templates/halls/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/halls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/halls/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hofvidz/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/hofvidz/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +53,36 @@
       <option name="presentableId" value="Default" />
       <updated>1580655673203</updated>
     </task>
+    <task id="LOCAL-00001" summary="API YOUTUBE updated">
+      <created>1592255214994</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592255214994</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="API YOUTUBE updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="API YOUTUBE updated" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1703" y="10" key="CommitChangelistDialog2" timestamp="1592255213071">
+      <screen x="1366" y="10" width="1366" height="728" />
+    </state>
+    <state x="1703" y="10" key="CommitChangelistDialog2/0.0.1366.728/1366.10.1366.728@1366.10.1366.728" timestamp="1592255213071" />
     <state x="184" y="5" key="SettingsEditor" timestamp="1592251600914">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="5" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592251600914" />
+    <state x="1641" y="106" key="Vcs.Push.Dialog.v2" timestamp="1592255236435">
+      <screen x="1366" y="10" width="1366" height="728" />
+    </state>
+    <state x="1641" y="106" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.10.1366.728@1366.10.1366.728" timestamp="1592255236435" />
     <state x="380" y="101" width="606" height="526" key="find.popup" timestamp="1590431670111">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="380" y="101" width="606" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590431670111" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/halls/views.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

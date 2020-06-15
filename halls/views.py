@@ -5,23 +5,21 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .models import Hall,Video
 from .forms import VideoForm, SearchFrom
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from django.forms.utils import ErrorList
 import urllib
 import requests
-
-
 #from django.forms import formset_factory
-
 YOUTUBE_API_KEY = 'AIzaSyAm4S6MTSK065ACstf4bziukY68VFzb78o'
-
 
 
 def home(request):
     return render(request, 'halls/home.html')
 
+
 def dashboard(request):
     return render(request, 'halls/dashboard.html')
+
 
 def add_video(request, pk):
     form = VideoForm()
@@ -30,11 +28,11 @@ def add_video(request, pk):
     if not hall.user == request.user:
         raise Http404
     if request.method == "POST":
-        filled_form = VideoForm(request.POST)
-        if filled_form.is_valid():
+        form = VideoForm(request.POST)
+        if form.is_valid():
             video = Video()
             video.hall = hall
-            video.url = filled_form.cleaned_data['url']
+            video.url = form.cleaned_data['url']
             parsed_url = urllib.parse.urlparse(video.url)
             video_id = urllib.parse.parse_qs(parsed_url.query).get('v')
             if video_id:
@@ -42,12 +40,22 @@ def add_video(request, pk):
                 response = requests.get(f'https://www.googleapis.com/youtube/v3/videos?part=snippet&id={ video_id[0] }&key={ YOUTUBE_API_KEY }')
                 json = response.json()
                 title = json['items'][0]['snippet']['title']
-                print(title)
-                #video.title =
-                #video.save()
-    
-    return render(request, 'halls/add_video.html', {'form': form, 'search_form': search_form})
-    
+                video.title = title
+                video.save()
+                return redirect('detail_hall', pk)
+            else:
+                errors = form._errors.setdefault('url', ErrorList())
+                errors.append('Needs to be a Youtube URL')
+
+    return render(request, 'halls/add_video.html', {'form': form, 'search_form': search_form, 'hall': hall})
+
+
+def video_search(request):
+    search_form = SearchFrom(request.GET)
+    if search_form.is_valid():
+        return JsonResponse({'Hello': search_form.cleaned_data['search_term']})
+    return JsonResponse({'Hello': 'Not working'})
+
 
 class SignUp(generic.CreateView):
     form_class = UserCreationForm
@@ -60,7 +68,8 @@ class SignUp(generic.CreateView):
         user = authenticate(username=username, password=password)
         login(self.request, user)
         return view
-        
+
+
 # CRUD
 class CreateHall(generic.CreateView):
     model = Hall
@@ -72,21 +81,21 @@ class CreateHall(generic.CreateView):
         form.instance.user = self.request.user
         super(CreateHall,self).form_valid(form)
         return redirect('home')
-    
+
+
 class DetailHall(generic.DetailView):
     model = Hall
     template_name = 'halls/detail_hall.html'
-    
+
+
 class UpdateHall(generic.UpdateView):
     model = Hall
     template_name = 'halls/update_hall.html'
     fields = ['title']
     success_url = reverse_lazy('dashboard')
-    
+
+
 class DeleteHall(generic.DeleteView):
     model = Hall
     template_name = 'halls/delete_hall.html'
     success_url = reverse_lazy('dashboard')
-        
-        
-    
