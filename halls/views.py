@@ -5,6 +5,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .models import Hall,Video
 from .forms import VideoForm, SearchFrom
+from django.http import Http404
+from django.forms.utils import ErrorList
+import urllib
+import requests
+
+
 #from django.forms import formset_factory
 
 YOUTUBE_API_KEY = 'AIzaSyAm4S6MTSK065ACstf4bziukY68VFzb78o'
@@ -18,20 +24,27 @@ def dashboard(request):
     return render(request, 'halls/dashboard.html')
 
 def add_video(request, pk):
-    #VideoFormSet = formset_factory(VideoForm, extra=5)
     form = VideoForm()
     search_form = SearchFrom()
-    
+    hall = Hall.objects.get( pk=pk )
+    if not hall.user == request.user:
+        raise Http404
     if request.method == "POST":
-        #Create
         filled_form = VideoForm(request.POST)
         if filled_form.is_valid():
             video = Video()
+            video.hall = hall
             video.url = filled_form.cleaned_data['url']
-            video.title = filled_form.cleaned_data['title']
-            video.youtube_id = filled_form.cleaned_data['youtube_id']
-            video.hall = Hall.objects.get(pk=pk)
-            video.save()
+            parsed_url = urllib.parse.urlparse(video.url)
+            video_id = urllib.parse.parse_qs(parsed_url.query).get('v')
+            if video_id:
+                video.youtube_id = video_id[0]
+                response = requests.get(f'https://www.googleapis.com/youtube/v3/videos?part=snippet&id={ video_id[0] }&key={ YOUTUBE_API_KEY }')
+                json = response.json()
+                title = json['items'][0]['snippet']['title']
+                print(title)
+                #video.title =
+                #video.save()
     
     return render(request, 'halls/add_video.html', {'form': form, 'search_form': search_form})
     

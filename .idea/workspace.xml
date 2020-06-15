@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b68a047-5544-451e-9723-c1fa88a18067" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/halls/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/halls/templates/registration/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/halls/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/halls/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -50,9 +53,23 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1580680214390">
+    <state x="184" y="5" key="SettingsEditor" timestamp="1592251600914">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/1366.0.1366.728/0.0.1366.728@0.0.1366.728" timestamp="1580680214390" />
+    <state x="184" y="5" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1592251600914" />
+    <state x="380" y="101" width="606" height="526" key="find.popup" timestamp="1590431670111">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="380" y="101" width="606" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590431670111" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/halls/views.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
